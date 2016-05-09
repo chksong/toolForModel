@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B898144F1CD88A37002668F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B898144E1CD88A37002668F9 /* AppDelegate.swift */; };
-		B89814511CD88A37002668F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89814501CD88A37002668F9 /* ViewController.swift */; };
 		B89814541CD88A37002668F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89814521CD88A37002668F9 /* Main.storyboard */; };
 		B89814561CD88A37002668F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B89814551CD88A37002668F9 /* Assets.xcassets */; };
 		B89814591CD88A37002668F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89814571CD88A37002668F9 /* LaunchScreen.storyboard */; };
 		B89814641CD88A37002668F9 /* ToolForModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89814631CD88A37002668F9 /* ToolForModelTests.swift */; };
 		B898146F1CD88A37002668F9 /* ToolForModelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B898146E1CD88A37002668F9 /* ToolForModelUITests.swift */; };
+		B8C65EEB1CD9E6D600F65DCF /* MuticastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8C65EEA1CD9E6D600F65DCF /* MuticastViewController.m */; };
+		E56018DE1BBEC7FCADB5DD1F /* Pods_ToolForModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A7980F316138ECEDA527B3C /* Pods_ToolForModel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7718F5CDE57343045B8CB0DD /* Pods-ToolForModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToolForModel.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToolForModel/Pods-ToolForModel.release.xcconfig"; sourceTree = "<group>"; };
+		8A7980F316138ECEDA527B3C /* Pods_ToolForModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToolForModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA7B300D08B432841BE56CB /* Pods-ToolForModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToolForModel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToolForModel/Pods-ToolForModel.debug.xcconfig"; sourceTree = "<group>"; };
 		B898144B1CD88A37002668F9 /* ToolForModel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToolForModel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B898144E1CD88A37002668F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B89814501CD88A37002668F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B89814531CD88A37002668F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B89814551CD88A37002668F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B89814581CD88A37002668F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,9 @@
 		B898146A1CD88A37002668F9 /* ToolForModelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToolForModelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B898146E1CD88A37002668F9 /* ToolForModelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolForModelUITests.swift; sourceTree = "<group>"; };
 		B89814701CD88A37002668F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8C65EDF1CD9E65900F65DCF /* ToolForModel-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToolForModel-Bridging-Header.h"; sourceTree = "<group>"; };
+		B8C65EE91CD9E6D600F65DCF /* MuticastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MuticastViewController.h; sourceTree = "<group>"; };
+		B8C65EEA1CD9E6D600F65DCF /* MuticastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MuticastViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E56018DE1BBEC7FCADB5DD1F /* Pods_ToolForModel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,13 +81,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FA02F40F875F90564A76DA9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8A7980F316138ECEDA527B3C /* Pods_ToolForModel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B89814421CD88A37002668F9 = {
 			isa = PBXGroup;
 			children = (
 				B898144D1CD88A37002668F9 /* ToolForModel */,
 				B89814621CD88A37002668F9 /* ToolForModelTests */,
 				B898146D1CD88A37002668F9 /* ToolForModelUITests */,
-				B898144C1CD88A37002668F9 /* Products */,
+				C05122D9B1178BC567BC67A5 /* Pods */,
+				4FA02F40F875F90564A76DA9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,17 +108,21 @@
 				B898146A1CD88A37002668F9 /* ToolForModelUITests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B898144D1CD88A37002668F9 /* ToolForModel */ = {
 			isa = PBXGroup;
 			children = (
 				B898144E1CD88A37002668F9 /* AppDelegate.swift */,
-				B89814501CD88A37002668F9 /* ViewController.swift */,
 				B89814521CD88A37002668F9 /* Main.storyboard */,
 				B89814551CD88A37002668F9 /* Assets.xcassets */,
 				B89814571CD88A37002668F9 /* LaunchScreen.storyboard */,
 				B898145A1CD88A37002668F9 /* Info.plist */,
+				B8C65EDF1CD9E65900F65DCF /* ToolForModel-Bridging-Header.h */,
+				B898144C1CD88A37002668F9 /* Products */,
+				B8C65EE91CD9E6D600F65DCF /* MuticastViewController.h */,
+				B8C65EEA1CD9E6D600F65DCF /* MuticastViewController.m */,
 			);
 			path = ToolForModel;
 			sourceTree = "<group>";
@@ -125,6 +145,15 @@
 			path = ToolForModelUITests;
 			sourceTree = "<group>";
 		};
+		C05122D9B1178BC567BC67A5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAA7B300D08B432841BE56CB /* Pods-ToolForModel.debug.xcconfig */,
+				7718F5CDE57343045B8CB0DD /* Pods-ToolForModel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +161,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B89814731CD88A37002668F9 /* Build configuration list for PBXNativeTarget "ToolForModel" */;
 			buildPhases = (
+				EF5847B59B1AE058563AC705 /* Check Pods Manifest.lock */,
 				B89814471CD88A37002668F9 /* Sources */,
 				B89814481CD88A37002668F9 /* Frameworks */,
 				B89814491CD88A37002668F9 /* Resources */,
+				3B17280BAD46EB34FC92E98E /* Embed Pods Frameworks */,
+				3789CFF924C1DF00708A686A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -251,12 +283,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3789CFF924C1DF00708A686A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToolForModel/Pods-ToolForModel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B17280BAD46EB34FC92E98E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToolForModel/Pods-ToolForModel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF5847B59B1AE058563AC705 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B89814471CD88A37002668F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B89814511CD88A37002668F9 /* ViewController.swift in Sources */,
+				B8C65EEB1CD9E6D600F65DCF /* MuticastViewController.m in Sources */,
 				B898144F1CD88A37002668F9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,23 +477,30 @@
 		};
 		B89814741CD88A37002668F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAA7B300D08B432841BE56CB /* Pods-ToolForModel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ToolForModel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tcl.ToolForModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ToolForModel/ToolForModel-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B89814751CD88A37002668F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7718F5CDE57343045B8CB0DD /* Pods-ToolForModel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ToolForModel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tcl.ToolForModel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ToolForModel/ToolForModel-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -482,6 +569,7 @@
 				B89814751CD88A37002668F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B89814761CD88A37002668F9 /* Build configuration list for PBXNativeTarget "ToolForModelTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +578,7 @@
 				B89814781CD88A37002668F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B89814791CD88A37002668F9 /* Build configuration list for PBXNativeTarget "ToolForModelUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +587,7 @@
 				B898147B1CD88A37002668F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
