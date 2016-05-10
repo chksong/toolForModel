@@ -10,6 +10,7 @@
 #import "GCDAsyncUdpSocket.h" // for UDP
 #import <SystemConfiguration/CaptiveNetwork.h>
 #import <NetworkExtension/NetworkExtension.h>
+#include <unistd.h>
 
 
 @interface MuticastViewController ()<GCDAsyncUdpSocketDelegate>
@@ -89,9 +90,10 @@
     self.textSSID.text = [self fetchSSIDInfo];
     
     //初始化定时器
-    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t concurrentQueue=dispatch_queue_create("com.tcl.udpqueue", 0);
+ //   dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     heartTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, concurrentQueue);
-    const int KeepHeartBeatInterval = 10 ;
+    const int KeepHeartBeatInterval = 2 ;
     dispatch_source_set_timer(heartTimer, DISPATCH_TIME_NOW, KeepHeartBeatInterval * NSEC_PER_SEC, 0);
     __weak id weakSelf = self;
     dispatch_source_set_event_handler(heartTimer, ^{
@@ -101,7 +103,7 @@
     
     
     //UDP socket
-    self.udpsocketSend = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()] ;
+    self.udpsocketSend = [[GCDAsyncUdpSocket alloc] initWithDelegate:self delegateQueue:concurrentQueue] ;
     NSError *error ;
    [self.udpsocketSend bindToPort:0 error:&error];
     bool bRet ;
@@ -115,6 +117,9 @@
 //    if (! bRet || nil != error) {
 //        NSLog(@"UPD Begin Recive Error: %@", [error description]);
 //    }
+    
+    _textPasswd.text = @"12345678" ;
+    
     
     
  }
@@ -229,30 +234,40 @@
     strcpy((char*)&data_bytes[2 + strSSID.length], [strPass UTF8String]);
     
     
-    for (int n = 0; n < 10; n++) {
-       // bRet = [self.udpsocketSend joinMulticastGroup:strMuticastIP error:&error];
-//        if (! bRet || nil != error) {
-//            NSLog(@"UPD Join Multicast Error: %@", [error description]);
-//            break;
-//        }
-        
+    for (int n = 0; n < 4; n++) {
+
         NSString* strhead = @"T" ;
         // NSData *header = [ NSData dataWithBytes:[head UTF8String] length:1] ;
         NSData *header = [strhead dataUsingEncoding:NSUTF8StringEncoding];
-        for (int i = 0 ; i < 20;  i++) {
-             [self.udpsocketSend sendData:header toHost:strMuticastIP port:30000 withTimeout:-1 tag:i];
-         }
+        for (int i = 0 ; i < 200;  i++) {
+            [self.udpsocketSend sendData:header toHost:strMuticastIP port:30000 withTimeout:-1 tag:i];
+            usleep(2000);
+        }
      
-//        bRet = [self.udpsocketSend leaveMulticastGroup:strMuticastIP error:&error];
-//        if (! bRet || nil != error)
-//        {
-//            NSLog(@"UPD EleaveMulticastGroup Error: %@", [error description]);
-//            break;
-//        }
+        
+        for (int i=0; i < 20; i++) {
+            Byte cnt = 7 ;
+            NSUInteger len = data.length ;
+            Byte* data_bytes = data.bytes;
+            for (int j = 0 ; j < len; j+=2) {
+                Byte ip_1 = cnt++ ;
+                Byte ip_2 = data_bytes[j] ;
+                Byte ip_3 = data_bytes[j+1] ;
+                
+                NSString* strMuticastIP = [NSString stringWithFormat:@"239.%d.%d.%d" ,ip_1, ip_2 ,ip_3] ;
+                
+                [self.udpsocketSend sendData:data toHost:strMuticastIP port:30000 withTimeout:-1 tag:j];
+                usleep(1000);
+            }
+            
+            usleep(10000);
+        }
+        
+
     }
     
     
-    
+    NSLog(@"%s --- end", __FUNCTION__);
     
 }
 
